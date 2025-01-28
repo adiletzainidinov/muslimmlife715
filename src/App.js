@@ -77,8 +77,6 @@ function App() {
     },
   ];
 
-
-
   const devlinksMuslimTube = [
     {
       url: '',
@@ -147,11 +145,13 @@ function App() {
           minH="100vh"
           p={3}
           sx={{
-            backgroundImage: `${heart}`,
+            backgroundImage: `url(${heart})`, // Добавил `url()`, чтобы правильно подставить изображение
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundAttachment: 'fixed',
+            backgroundAttachment: 'fixed', // Фон остаётся фиксированным при прокрутке
             backgroundBlendMode: 'soft-light',
+            backgroundRepeat: 'no-repeat', // Убираем повторения изображения
+            backgroundColor: 'rgba(0, 0, 0, 0.5)', // Добавил тёмный полупрозрачный слой для лучшей читаемости контента
           }}
         >
           <VStack marginTop="2em">
@@ -240,7 +240,7 @@ function App() {
                   variants={chieldElement}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  style={{cursor: 'pointer'}}
+                  style={{ cursor: 'pointer' }}
                 >
                   <Text as={link.icon} fontSize={30} marginRight="auto" />
                   <Text
@@ -352,7 +352,7 @@ function App() {
                   variants={chieldElement}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  style={{cursor: 'pointer'}}
+                  style={{ cursor: 'pointer' }}
                 >
                   <Text as={link.icon} fontSize={30} marginRight="auto" />
                   <Text
