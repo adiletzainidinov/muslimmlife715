@@ -162,7 +162,7 @@ function App() {
               ) : (
                 <Image
                   src={logoMuslimKids}
-                  alt="Логотип канала Техноманьяк"
+                  alt="Логотип канала muslimkids.media"
                   w="9em"
                   borderRadius="50%"
                   border="3px solid white"
