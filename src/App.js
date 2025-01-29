@@ -47,7 +47,7 @@ function App() {
   //Ссылки на доп. материалы
   const devlinksHelp = [
     {
-      url: '',
+      url: 'https://details-zeta.vercel.app/',
       icon: AiFillDollarCircle,
       text: 'спонсировать ',
     },
@@ -221,38 +221,40 @@ function App() {
                 Поддержать
               </p>
               {devlinksHelp.map(link => (
-                <HStack
-                  key={link.text}
-                  onClick={onOpen}
-                  w="15em"
-                  h="3em"
-                  borderRadius="12px"
-                  boxShadow="10px 5px 5px rgba(0,0,0,0.5)"
-                  color="gray.900"
-                  bgColor={color.colorButton}
-                  p="1em"
-                  marginY="1em"
-                  _hover={{
-                    boxShadow: '12px 14px 14px 0px rgba(156, 38, 184, 0.84)',
-                    color: 'rgba(156, 38, 184, 0.84)',
-                  }}
-                  as={motion.div}
-                  variants={chieldElement}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  style={{ cursor: 'pointer' }}
-                >
-                  <Text as={link.icon} fontSize={30} marginRight="auto" />
-                  <Text
-                    fontSize={20}
-                    fontWeight="bold"
-                    marginRight="auto"
+                <a href={link.url} target="_blank" rel="noopener noreferrer">
+                  <HStack
+                    key={link.text}
+                    w="15em"
+                    h="3em"
+                    borderRadius="12px"
+                    boxShadow="10px 5px 5px rgba(0,0,0,0.5)"
+                    color="gray.900"
+                    bgColor={color.colorButton}
                     p="1em"
                     marginY="1em"
+                    _hover={{
+                      boxShadow: '12px 14px 14px 0px rgba(156, 38, 184, 0.84)',
+                      color: 'rgba(156, 38, 184, 0.84)',
+                    }}
+                    as={motion.div}
+                    variants={chieldElement}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    style={{ cursor: 'pointer' }}
+                    href={link.url}
                   >
-                    {link.text}
-                  </Text>
-                </HStack>
+                    <Text as={link.icon} fontSize={30} marginRight="auto" />
+                    <Text
+                      fontSize={20}
+                      fontWeight="bold"
+                      marginRight="auto"
+                      p="1em"
+                      marginY="1em"
+                    >
+                      {link.text}
+                    </Text>
+                  </HStack>
+                </a>
               ))}
             </List>
 
