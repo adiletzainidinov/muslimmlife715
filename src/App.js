@@ -12,14 +12,6 @@ import {
   Skeleton,
   SkeletonCircle,
   SkeletonText,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Button,
-  useDisclosure,
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 
@@ -42,8 +34,6 @@ import logoMuslimKids from './assets/MuslimKidsLogoReal.png';
 import heart from './assets/heart.jpg';
 
 function App() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
   //Ссылки на доп. материалы
   const devlinksHelp = [
     {
@@ -79,9 +69,9 @@ function App() {
 
   const devlinksMuslimTube = [
     {
-      url: '',
+      url: 'https://mtube-two.vercel.app/',
       icon: FiYoutube,
-      text: 'Muslim You Tube',
+      text: 'MTUB',
     },
   ];
 
@@ -216,63 +206,53 @@ function App() {
               animate="show"
             >
               <p
-                style={{ color: 'white', fontSize: '24px', fontWeight: 'bold' }}
+                style={{
+                  color: 'white',
+                  fontSize: '24px',
+                  fontWeight: 'bold',
+                  marginTop: 30,
+                }}
               >
-                Поддержать
+                Мусульманский You Tube
+                <span style={{fontSize:'16px',position: 'relative', top: -15}}>
+                  <br /> {'(будущая платформа)'}
+                </span>
               </p>
-              {devlinksHelp.map(link => (
-                <a href={link.url} target="_blank" rel="noopener noreferrer">
-                  <HStack
-                    key={link.text}
-                    w="15em"
-                    h="3em"
-                    borderRadius="12px"
-                    boxShadow="10px 5px 5px rgba(0,0,0,0.5)"
-                    color="gray.900"
-                    bgColor={color.colorButton}
+              {devlinksMuslimTube.map(link => (
+                <HStack
+                  key={link.text}
+                  w="15em"
+                  h="3em"
+                  borderRadius="12px"
+                  boxShadow="10px 5px 5px rgba(0,0,0,0.5)"
+                  color="gray.900"
+                  bgColor={color.colorButton}
+                  p="1em"
+                  marginY="1em"
+                  _hover={{
+                    boxShadow: '12px 14px 14px 0px rgba(156, 38, 184, 0.84)',
+                    color: 'rgba(156, 38, 184, 0.84)',
+                  }}
+                  as={motion.div}
+                  variants={chieldElement}
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => window.open(link.url, '_blank')}
+                >
+                  <Text as={link.icon} fontSize={30} marginRight="auto" />
+                  <Text
+                    fontSize={20}
+                    fontWeight="bold"
+                    marginRight="auto"
                     p="1em"
                     marginY="1em"
-                    _hover={{
-                      boxShadow: '12px 14px 14px 0px rgba(156, 38, 184, 0.84)',
-                      color: 'rgba(156, 38, 184, 0.84)',
-                    }}
-                    as={motion.div}
-                    variants={chieldElement}
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
-                    style={{ cursor: 'pointer' }}
-                    href={link.url}
                   >
-                    <Text as={link.icon} fontSize={30} marginRight="auto" />
-                    <Text
-                      fontSize={20}
-                      fontWeight="bold"
-                      marginRight="auto"
-                      p="1em"
-                      marginY="1em"
-                    >
-                      {link.text}
-                    </Text>
-                  </HStack>
-                </a>
+                    {link.text}
+                  </Text>
+                </HStack>
               ))}
             </List>
-
-            {/* Модальное окно */}
-            <Modal isOpen={isOpen} onClose={onClose} isCentered>
-              <ModalOverlay />
-              <ModalContent>
-                <ModalHeader>Информация</ModalHeader>
-                <ModalBody>
-                  <Text>Этот раздел находится в разработке.</Text>
-                </ModalBody>
-                <ModalFooter>
-                  <Button colorScheme="blue" onClick={onClose}>
-                    Закрыть
-                  </Button>
-                </ModalFooter>
-              </ModalContent>
-            </Modal>
 
             {/* Блок с ссылками */}
             <List
@@ -334,40 +314,7 @@ function App() {
               >
                 Доп. Ссылки
               </p>
-              {devlinksMuslimTube.map(link => (
-                <HStack
-                  key={link.text}
-                  onClick={onOpen}
-                  w="15em"
-                  h="3em"
-                  borderRadius="12px"
-                  boxShadow="10px 5px 5px rgba(0,0,0,0.5)"
-                  color="gray.900"
-                  bgColor={color.colorButton}
-                  p="1em"
-                  marginY="1em"
-                  _hover={{
-                    boxShadow: '12px 14px 14px 0px rgba(156, 38, 184, 0.84)',
-                    color: 'rgba(156, 38, 184, 0.84)',
-                  }}
-                  as={motion.div}
-                  variants={chieldElement}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
-                  style={{ cursor: 'pointer' }}
-                >
-                  <Text as={link.icon} fontSize={30} marginRight="auto" />
-                  <Text
-                    fontSize={20}
-                    fontWeight="bold"
-                    marginRight="auto"
-                    p="1em"
-                    marginY="1em"
-                  >
-                    {link.text}
-                  </Text>
-                </HStack>
-              ))}
+
               {devlinks.map(link => (
                 <a href={link.url} target="_blank" rel="noopener noreferrer">
                   <HStack
@@ -388,6 +335,42 @@ function App() {
                     variants={chieldElement}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
+                  >
+                    <Text as={link.icon} fontSize={30} marginRight="auto" />
+                    <Text
+                      fontSize={20}
+                      fontWeight="bold"
+                      marginRight="auto"
+                      p="1em"
+                      marginY="1em"
+                    >
+                      {link.text}
+                    </Text>
+                  </HStack>
+                </a>
+              ))}
+              {devlinksHelp.map(link => (
+                <a href={link.url} target="_blank" rel="noopener noreferrer">
+                  <HStack
+                    key={link.text}
+                    w="15em"
+                    h="3em"
+                    borderRadius="12px"
+                    boxShadow="10px 5px 5px rgba(0,0,0,0.5)"
+                    color="gray.900"
+                    bgColor={color.colorButton}
+                    p="1em"
+                    marginY="1em"
+                    _hover={{
+                      boxShadow: '12px 14px 14px 0px rgba(156, 38, 184, 0.84)',
+                      color: 'rgba(156, 38, 184, 0.84)',
+                    }}
+                    as={motion.div}
+                    variants={chieldElement}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    style={{ cursor: 'pointer' }}
+                    href={link.url}
                   >
                     <Text as={link.icon} fontSize={30} marginRight="auto" />
                     <Text
