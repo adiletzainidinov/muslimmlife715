@@ -22,7 +22,7 @@ import { motion } from 'framer-motion';
 import {
   AiFillCheckCircle,
   AiFillYoutube,
-  AiFillDollarCircle,
+  // AiFillDollarCircle,
 } from 'react-icons/ai';
 
 import { FaTelegram, FaInstagram } from 'react-icons/fa';
@@ -35,13 +35,13 @@ import heart from './assets/heart.jpg';
 
 function App() {
   //Ссылки на доп. материалы
-  const devlinksHelp = [
-    {
-      url: 'https://details-zeta.vercel.app/',
-      icon: AiFillDollarCircle,
-      text: 'спонсировать ',
-    },
-  ];
+  // const devlinksHelp = [
+  //   {
+  //     url: 'https://details-zeta.vercel.app/',
+  //     icon: AiFillDollarCircle,
+  //     text: 'спонсировать ',
+  //   },
+  // ];
 
   //Ссылки на социальные сети и их логотипы
   const links = [
@@ -69,9 +69,9 @@ function App() {
 
   const devlinksMuslimTube = [
     {
-      url: 'https://mtube-two.vercel.app/',
+      url: 'https://m-three-weld.vercel.app/',
       icon: FiYoutube,
-      text: 'MTUB',
+      text: 'MuslimContent',
     },
   ];
 
@@ -213,9 +213,11 @@ function App() {
                   marginTop: 30,
                 }}
               >
-                Мусульманский You Tube
-                <span style={{fontSize:'16px',position: 'relative', top: -15}}>
-                  <br /> {'(будущая платформа)'}
+                Курс путь к 50K
+                <span
+                  style={{ fontSize: '16px', position: 'relative', top: -15 }}
+                >
+                  <br /> {'(рост канала без съёмок с нуля)'}
                 </span>
               </p>
               {devlinksMuslimTube.map(link => (
@@ -349,7 +351,7 @@ function App() {
                   </HStack>
                 </a>
               ))}
-              {devlinksHelp.map(link => (
+              {/* {devlinksHelp.map(link => (
                 <a href={link.url} target="_blank" rel="noopener noreferrer">
                   <HStack
                     key={link.text}
@@ -384,7 +386,7 @@ function App() {
                     </Text>
                   </HStack>
                 </a>
-              ))}
+              ))} */}
             </List>
           </VStack>
         </Grid>
