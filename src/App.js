@@ -26,11 +26,11 @@ import {
 } from 'react-icons/ai';
 
 import { FaTelegram, FaInstagram } from 'react-icons/fa';
-import { FiYoutube } from 'react-icons/fi';
-import { FaMoon } from 'react-icons/fa';
+// import { FiYoutube } from 'react-icons/fi';
+// import { FaMoon } from 'react-icons/fa';
 import { SiTiktok } from 'react-icons/si';
 
-import logoMuslimKids from './assets/MuslimKidsLogoReal.png';
+import logoMuslimKids from './assets/logo.jpg';
 import heart from './assets/heart.jpg';
 
 function App() {
@@ -46,46 +46,46 @@ function App() {
   //Ссылки на социальные сети и их логотипы
   const links = [
     {
-      url: 'https://youtube.com/@muslimkidskg?si=2imDDpl46rMfb54y',
+      url: 'https://youtube.com/@muslimmlife715?si=OYN05AbxxPqj3tTU',
       icon: AiFillYoutube,
       text: 'YouTube',
     },
     {
-      url: 'https://www.tiktok.com/@muslimkids.media?is_from_webapp=1&sender_device=pc',
+      url: 'https://www.tiktok.com/@muslimmlife715?_t=ZN-8viVYb87SGV&_r=1',
       icon: SiTiktok, // Исправленная иконка
       text: 'TikTok',
     },
     {
-      url: 'https://t.me/muslimkidsmedia',
+      url: 'https://t.me/muslimmlife715',
       icon: FaTelegram,
       text: 'Telegram',
     },
     {
-      url: 'https://www.instagram.com/muslimkids.media?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==',
+      url: 'https://www.instagram.com/muslimmlife715',
       icon: FaInstagram,
       text: 'Instagram',
     },
   ];
 
-  const devlinksMuslimTube = [
-    {
-      url: 'https://m-three-weld.vercel.app/',
-      icon: FiYoutube,
-      text: 'MuslimContent',
-    },
-  ];
+  // const devlinksMuslimTube = [
+  //   {
+  //     url: 'https://m-three-weld.vercel.app/',
+  //     icon: FiYoutube,
+  //     text: 'MuslimContent',
+  //   },
+  // ];
 
-  const devlinks = [
-    {
-      url: 'https://www.nasyikat.media/?fbclid=PAZXh0bgNhZW0CMTEAAabH2nWI83VtEvd-EPr93ZtkR-oDlVaTR9Yqg9b8vYT5u2TCqJIJYRgdqd8_aem_5CeJBO3URcs_YDGEhCfPIw',
-      icon: FaMoon,
-      text: 'nasyikat.media',
-    },
-  ];
+  // const devlinks = [
+  //   {
+  //     url: 'https://www.nasyikat.media/?fbclid=PAZXh0bgNhZW0CMTEAAabH2nWI83VtEvd-EPr93ZtkR-oDlVaTR9Yqg9b8vYT5u2TCqJIJYRgdqd8_aem_5CeJBO3URcs_YDGEhCfPIw',
+  //     icon: FaMoon,
+  //     text: 'nasyikat.media',
+  //   },
+  // ];
 
   //Название страницы
   const info = {
-    name: '@muslimkids.media',
+    name: '@muslimmlife715',
   };
 
   // Настройка цвета страницы
@@ -199,7 +199,7 @@ function App() {
             </HStack>
 
             {/* Список "Поддержать" */}
-            <List
+            {/* <List
               as={motion.ul}
               variants={parentContainer}
               initial="hidden"
@@ -254,7 +254,7 @@ function App() {
                   </Text>
                 </HStack>
               ))}
-            </List>
+            </List> */}
 
             {/* Блок с ссылками */}
             <List
@@ -305,7 +305,7 @@ function App() {
             </List>
 
             {/* Блок с доп ссылками */}
-            <List
+            {/* <List
               as={motion.ul}
               variants={parentContainer}
               initial="hidden"
@@ -315,9 +315,9 @@ function App() {
                 style={{ color: 'white', fontSize: '24px', fontWeight: 'bold' }}
               >
                 Доп. Ссылки
-              </p>
+              </p> */}
 
-              {devlinks.map(link => (
+              {/* {devlinks.map(link => (
                 <a href={link.url} target="_blank" rel="noopener noreferrer">
                   <HStack
                     w="15em"
@@ -350,7 +350,7 @@ function App() {
                     </Text>
                   </HStack>
                 </a>
-              ))}
+              ))} */}
               {/* {devlinksHelp.map(link => (
                 <a href={link.url} target="_blank" rel="noopener noreferrer">
                   <HStack
@@ -387,7 +387,7 @@ function App() {
                   </HStack>
                 </a>
               ))} */}
-            </List>
+            {/* </List> */}
           </VStack>
         </Grid>
       </Box>
